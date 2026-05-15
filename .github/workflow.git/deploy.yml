@@ -15,10 +15,10 @@ username: ${{ secrets.EC2_USERNAME }}
 key: ${{ secrets.EC2_SSH_KEY }}
 script: |
 cd /home/ubuntu
-if [ ! -d "devops-notes-app" ]; then
-git clone YOUR_REPO_URL
+if [ ! -d "devops" ]; then
+git clone https://github.com/sejal429/devops
 fi
-cd devops-notes-app
+cd devops
 git pull origin main
 docker compose down
 docker compose up --build -d
